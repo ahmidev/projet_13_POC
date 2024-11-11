@@ -31,7 +31,7 @@ const materialModules = [
   declarations: [
     ListComponent,
     FormComponent,
-    DetailComponent
+    DetailComponent,
   ],
   imports: [
     CommonModule,

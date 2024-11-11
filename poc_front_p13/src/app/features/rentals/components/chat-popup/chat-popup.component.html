@@ -1,0 +1,19 @@
+<!-- chat-popup.component.html -->
+<div *ngIf="isOpen" class="chat-popup">
+    <div class="chat-header">
+      <span>Support Chat</span>
+      <button (click)="closeChat()">X</button>
+    </div>
+    <div class="chat-body">
+      <div *ngFor="let message of messages">
+        <div [ngClass]="{'user-message': message.user === 'Client', 'support-message': message.user === 'Support'}">
+          <strong>{{ message.user }}:</strong> {{ message.text }}
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input [(ngModel)]="messageText" placeholder="Tapez votre message..." />
+      <button (click)="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+  

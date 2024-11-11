@@ -1,6 +1,9 @@
-<div class="app">
+<!-- <div class="app">
   <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
-    <span>Rental app</span>
+    <span class="logo">
+      YOUR CAR
+      <img src="assets/logo.png" alt="Rental app logo" />
+    </span>
     <div *ngIf="$isLogged() | async; else notLogged">
       <span routerLink="rentals" class="link">Rentals</span>
       <span routerLink="me" class="link">Account</span>
@@ -16,4 +19,28 @@
   <div>
     <router-outlet></router-outlet>
   </div>
+</div> -->
+<div class="app">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <span class="logo">
+      <img src="assets/logo.png" alt="Rental app logo" />
+    </span>
+    <div *ngIf="$isLogged() | async; else notLogged">
+      <span routerLink="rentals" class="link">Rentals</span>
+      <span routerLink="me" class="link">Account</span>
+      <span (click)="logout()" class="link">Logout</span>
+    </div>
+    <ng-template #notLogged>
+      <div>
+        <span routerLink="login" class="link">Login</span>
+        <span routerLink="register" class="link">Register</span>
+      </div>
+    </ng-template>
+  </mat-toolbar>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <button class="chat-button" (click)="openChat()">Chat avec le support</button>
+  <app-chat-popup></app-chat-popup>
 </div>

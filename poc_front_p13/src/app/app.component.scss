@@ -1,11 +1,40 @@
 .app {
     .link {
-        cursor: pointer;
-        font-size: 16px;
-        text-decoration: none;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
     }
-
+  
     .link + .link {
-        margin-left: 10px;
+      margin-left: 10px;
     }
-}
+  
+    .logo {
+      display: flex;
+      align-items: center;
+  
+      img {
+        height: 80px; 
+        width: auto;
+      }
+    }
+  }
+  .chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chat-button:hover {
+    background-color: #0056b3;
+  }
+  

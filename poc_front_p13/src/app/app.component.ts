@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from './features/auth/services/auth.service';
 import { User } from './interfaces/user.interface';
 import { SessionService } from './services/session.service';
+import { ChatService } from './features/rentals/services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,12 @@ import { SessionService } from './services/session.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  chatOpen = false;
+
   constructor(
     private authService: AuthService,
     private router: Router,
+    private chatService: ChatService,
     private sessionService: SessionService) {
   }
 
@@ -39,5 +43,15 @@ export class AppComponent implements OnInit {
         this.sessionService.logOut();
       }
     )
+  }
+
+
+
+  openChat() {
+    this.chatService.openChat();
+  }
+
+  closeChat() {
+    this.chatOpen = false;
   }
 }
